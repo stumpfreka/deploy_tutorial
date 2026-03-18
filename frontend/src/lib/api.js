@@ -16,6 +16,7 @@ async function request(path, options = {}) {
     const message = data?.message || "Request failed";
     throw new Error(message);
   }
+
   return data;
 }
 
@@ -25,14 +26,17 @@ export const api = {
       method: "POST",
       body: JSON.stringify(payload),
     }),
+
   login: (payload) =>
     request("/users/login", {
       method: "POST",
       body: JSON.stringify(payload),
     }),
+
   logout: () =>
     request("/users/logout", {
       method: "POST",
     }),
+
   me: () => request("/users/me"),
 };
