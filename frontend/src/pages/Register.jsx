@@ -31,7 +31,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await api.register(form);
+      await register(form);
       toast.success("Register successfully");
       /* setInterval(() => {}, 2000); */
       await sleep(2000);
